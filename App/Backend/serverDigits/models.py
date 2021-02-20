@@ -56,7 +56,7 @@ def feature_extraction(figure): #figure is a np array, shape 28*28
 # Create new train data
 new_train_data = []
 
-for i in range (60000):
+for i in range (len(train_data)):
     print(i)
     feature_np = np.array(train_data[i][0])
     figure = feature_np.reshape(28,28)
@@ -94,7 +94,7 @@ optim = optim.Adam(model.parameters(), lr=0.001)
 loss = nn.CrossEntropyLoss()
 
 #training
-nb_epochs = 10
+nb_epochs = 12
 for epoch in range(nb_epochs):
 
   # Training loop
